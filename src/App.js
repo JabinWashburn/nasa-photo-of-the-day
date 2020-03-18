@@ -1,15 +1,24 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./App.css";
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
-    </div>
-  );
+const App = () => {
+  const [photo, setPhoto] = useState([]);
+  
+  useEffect(() => {
+    axios
+    .get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+    .then (response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.log('There is an error jabin', error)
+    });
+  });
+
+  return <div className='App'>
+
+  </div>;
 }
 
 export default App;

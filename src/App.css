@@ -38,8 +38,3 @@
     transform: rotate(360deg);
   }
 }
-
-.App img{
-  max-height: 20rem;
-  border-radius: 15px;
-}
